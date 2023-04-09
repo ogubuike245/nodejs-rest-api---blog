@@ -2,6 +2,16 @@
 
 This is a Node.js-based backend for a simple blog application with REST API endpoints. It provides functionality for users to sign up, log in, and perform CRUD (Create, Read, Update, Delete) operations on blog posts.
 
+
+## REST API Overview
+
+REST (Representational State Transfer) is a widely used architectural style for designing networked applications. In a REST API, resources are represented as URLs, and operations on these resources are performed using standard HTTP methods (such as GET, POST, PUT, DELETE). The API endpoints return data in well-defined formats (such as JSON) that can be easily consumed by clients.
+
+### Why REST API?
+
+I chose to use REST API for this blog application due to its simplicity and widespread adoption in the industry. REST API is a well-established and widely understood approach for building APIs, with a large ecosystem of tools and libraries available. It provides a straightforward way to expose resources over the web and can be easily consumed by a wide range of clients, including web browsers, mobile apps, and other servers.
+
+
 ## Features
 
 - REST API endpoints for creating, reading, updating, and deleting blog posts
