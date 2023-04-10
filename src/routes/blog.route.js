@@ -1,18 +1,18 @@
 import express from "express";
 import {
   createBlogPost,
-  editBlogPost,
-  getBlogPost,
-  getBlogPosts,
+  updateBlogPost,
+  getSingleBlogPost,
+  getAllBlogPosts,
   deleteBlogPost,
 } from "../controllers/blog.controller.js";
 
 const blogRouter = express.Router();
 
 blogRouter.post("/create/post", createBlogPost);
-blogRouter.get("/posts", getBlogPosts);
-blogRouter.get("/post/:id", getBlogPost);
-blogRouter.put("/edit/post/:id", editBlogPost);
+blogRouter.get("/posts", getAllBlogPosts);
+blogRouter.get("/post/:id", getSingleBlogPost);
+blogRouter.put("/edit/post/:id", updateBlogPost);
 blogRouter.delete("/delete/post/:id", deleteBlogPost);
 
 export default blogRouter;

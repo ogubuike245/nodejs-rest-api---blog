@@ -29,7 +29,7 @@ export const createBlogPostService = async function (data) {
   }
 };
 
-export const getBlogPostsService = async function () {
+export const getAllBlogPostsService = async function () {
   try {
     // Find all blog posts
     const posts = await Blog.find({});
@@ -52,7 +52,7 @@ export const getBlogPostsService = async function () {
   }
 };
 
-export const getBlogPostService = async function (id) {
+export const getSingleBlogPostService = async function (id) {
   try {
     // Find the blog post by ID
     const existingPost = await Blog.findById(id);
@@ -84,7 +84,7 @@ export const getBlogPostService = async function (id) {
   }
 };
 
-export const editBlogPostService = async function (data) {
+export const updateBlogPostService = async function (data) {
   const { title, content, category, snippet, featured, id } = data;
   try {
     // Check if the blog post exists

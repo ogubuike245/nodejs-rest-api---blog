@@ -1,8 +1,8 @@
 import {
   createBlogPostService,
-  editBlogPostService,
-  getBlogPostService,
-  getBlogPostsService,
+  updateBlogPostService,
+  getSingleBlogPostService,
+  getAllBlogPostsService,
   deleteBlogPostService,
 } from "../services/blog.service.js";
 
@@ -25,9 +25,9 @@ export const createBlogPost = async (request, response, next) => {
   }
 };
 
-export const getBlogPosts = async (request, response, next) => {
+export const getAllBlogPosts = async (request, response, next) => {
   try {
-    const result = await getBlogPostsService();
+    const result = await getAllBlogPostsService();
     const { status, message, posts, success } = result;
     return response.status(status).json({ message, success, posts });
   } catch (error) {
@@ -37,10 +37,10 @@ export const getBlogPosts = async (request, response, next) => {
   }
 };
 
-export const getBlogPost = async (request, response, next) => {
+export const getSingleBlogPost = async (request, response, next) => {
   const { id } = request.params;
   try {
-    const result = await getBlogPostService(id);
+    const result = await getSingleBlogPostService(id);
     const { status, message, post, success } = result;
     return response.status(status).json({ message, success, post });
   } catch (error) {
@@ -50,11 +50,11 @@ export const getBlogPost = async (request, response, next) => {
   }
 };
 
-export const editBlogPost = async (request, response, next) => {
+export const updateBlogPost = async (request, response, next) => {
   const { id } = request.params;
   const { title, content, category, snippet, featured } = request.body;
   try {
-    const result = await editBlogPostService({
+    const result = await updateBlogPostService({
       title,
       content,
       category,
